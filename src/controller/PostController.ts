@@ -1,6 +1,7 @@
 import { PostBusiness } from "../business/post/PostBusiness";
 import { Request, Response } from 'express'
 import { postDTO } from "../model/post";
+import { send } from "process";
 
 export class PostController {
     constructor(private postBusiness:PostBusiness ) {}
@@ -25,6 +26,14 @@ export class PostController {
         } catch (error:any) {
             throw new Error(error.message||error.sqlMessage);
             
+        }
+    }
+    getById = async(req:Request, res:Response) => {
+        try {
+            let result = await this.postBusiness.getById(req.params.id)
+            res.status(200).send(result)
+        } catch (error:any) {
+            res.status(error.statusCode||404).send(error.message)
         }
     }
 }

@@ -16,4 +16,12 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
         .from(PostDatabase.TABLE_NAME)
         return result
     }
+
+    getById = async (id:string) :Promise<post> => {
+        let result:post = await BaseDatabase.connection
+        .select()
+        .where({id})
+        .from(PostDatabase.TABLE_NAME)
+        return result
+    }
 }

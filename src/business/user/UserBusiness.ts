@@ -29,7 +29,7 @@ export class UserBusiness {
             }
             await this.userDatabase.insertUser(input)
         } catch (error:any) {
-            throw new CustomError(error.code||400, error.message || error.sqlMessage);
+            throw new CustomError(error.statusCode||400, error.message || error.sqlMessage);
             
         }
     }

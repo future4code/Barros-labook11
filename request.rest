@@ -25,4 +25,8 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:3003/post/get/3fb5ed79-3dde-47f6-801a-27e91c07b711
+
+###
+
 GET http://localhost:3003/post/all

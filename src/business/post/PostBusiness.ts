@@ -49,4 +49,31 @@ export class PostBusiness {
             
         }
     }
+    getById = async(id:string):Promise<post> => {
+        try {
+            if (!id) {
+                throw new CustomError(400, "Id has to be passed as params")
+            }
+            
+            let result:any = await this.postDatabase.getById(id)
+    
+            let length = result.length
+            console.log(length);
+            
+            if (result.length <= 0) {
+                throw new CustomError(404, "Post not found :/")
+            }
+            console.log(result);
+            
+            return result
+            
+            // if (result === undefined ||) {
+            //     throw new CustomError(404, "Post not found :/");
+                
+            // }
+        } catch (error:any) {
+            throw new CustomError(404, error.message);
+            
+        }
+    }
 }
