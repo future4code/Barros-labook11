@@ -22,3 +22,7 @@ Content-Type: application/json
     "type":"normal",
     "authorId":"a2c4afbb-70a3-453e-a813-1b8bdc1e1fc9"
 }
+
+###
+
+GET http://localhost:3003/post/all

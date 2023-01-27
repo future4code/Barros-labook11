@@ -41,4 +41,12 @@ export class PostBusiness {
             throw new error(error.code||400, error.message||error.sqlMessage)
         }
     }
+    getAll = async():Promise<post[]> => {
+        try {
+            return await this.postDatabase.getAll()
+        } catch (error:any) {
+            throw new Error(error.message||error.sqlMessage);
+            
+        }
+    }
 }

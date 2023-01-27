@@ -18,4 +18,13 @@ export class PostController {
             throw new Error(error.message||error.sqlMessage);            
         }
     }
+    getAll = async(req:Request, res:Response) =>{
+        try {
+            let result =  await this.postBusiness.getAll()
+            res.status(200).send(result)
+        } catch (error:any) {
+            throw new Error(error.message||error.sqlMessage);
+            
+        }
+    }
 }

@@ -10,4 +10,10 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
         .insert(post)
         .from(PostDatabase.TABLE_NAME)
     }
+    getAll = async () : Promise<post[]> => {
+        let result = await BaseDatabase.connection
+        .select()
+        .from(PostDatabase.TABLE_NAME)
+        return result
+    }
 }

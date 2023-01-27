@@ -11,3 +11,5 @@ const postbusiness = new PostBusiness(postDatabase)
 const postController = new PostController(postbusiness)
 
 postRouter.post("/create", (req,res) => postController.insertPost(req, res))
+
+postRouter.get("/all", (req, res) => postController.getAll(req, res))
