@@ -1,0 +1,32 @@
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name":"Iza",
+    "email":"iza@gmail.com",
+    "password":"Iza2123"
+}
+
+###
+
+GET http://localhost:3003/user/all
+
+###
+
+POST http://localhost:3003/post/create
+Content-Type: application/json
+
+{
+    "photo":"https://i0.wp.com/omeudiadia.com.br/wp-content/uploads/2022/04/gatinho-com-capuz-de-pandinha.jpg?resize=563%2C506&ssl=1",
+    "description":"Mais um gatinho fofo no seu feed",
+    "type":"normal",
+    "authorId":"a2c4afbb-70a3-453e-a813-1b8bdc1e1fc9"
+}
+
+###
+
+GET http://localhost:3003/post/get/4be3cbe4-571b-449d-9140-7b6f799ff7fb
+
+###
+
+GET http://localhost:3003/post/all
