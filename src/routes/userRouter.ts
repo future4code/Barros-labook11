@@ -11,5 +11,7 @@ const userController = new UserController(userBusiness)
 
 userRouter.post("/create", (req,res) => userController.insertUser(req, res))
 
+userRouter.get('/all',(req, res) => userController.getUser(req,res))
+
 // userRouter.get("/all", userController.getAll)
 

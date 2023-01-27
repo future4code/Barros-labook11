@@ -1,7 +1,8 @@
 import { CustomError, InvalidEmail, InvalidInput, InvalidPassword } from "../error/CustomError";
-import { userInputDTO } from "../model/user";
+import { userInputDTO, user } from "../model/user";
 import { UserRepository } from "./UserRepository";
 import { v4 as generateId } from 'uuid'
+
 
 
 export class UserBusiness {
@@ -29,6 +30,14 @@ export class UserBusiness {
             await this.userDatabase.insertUser(input)
         } catch (error:any) {
             throw new CustomError(error.code||400, error.message || error.sqlMessage);
+            
+        }
+    }
+    getUser = async():Promise<user[]> => {
+        try {
+            return await this.userDatabase.getUsers()
+        } catch (error:any) {
+            throw new Error(error.message||error.sqlMessage);
             
         }
     }

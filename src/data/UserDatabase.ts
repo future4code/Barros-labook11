@@ -18,8 +18,10 @@ export class UserDatabase extends BaseDatabase implements UserRepository {
     getUsers = async(): Promise<user[]> => {
         try {
             let result:user[] = await BaseDatabase.connection
-            .select()
+            .select('*')
             .from(UserDatabase.TABLE_NAME)
+            console.log(result);
+            
             return result
         } catch (error:any) {
             throw new CustomError(400, error.message);
