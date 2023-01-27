@@ -1,5 +1,5 @@
 import express from 'express'
-import { UserBusiness } from '../business/UserBusiness'
+import { UserBusiness } from '../business/user/UserBusiness'
 import { UserController } from '../controller/UserController'
 import { UserDatabase } from '../data/UserDatabase'
 

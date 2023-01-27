@@ -10,3 +10,15 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3003/user/all
+
+###
+
+POST http://localhost:3003/post/create
+Content-Type: application/json
+
+{
+    "photo":"https://capricho.abril.com.br/wp-content/uploads/2015/08/gatinho.jpg?quality=85&strip=info&w=620&resize=1200,800",
+    "description":"Gatinho estiloso",
+    "type":"normal",
+    "authorId":"a2c4afbb-70a3-453e-a813-1b8bdc1e1fc9"
+}

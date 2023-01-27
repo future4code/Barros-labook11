@@ -1,4 +1,4 @@
-import { UserRepository } from "../business/UserRepository";
+import { UserRepository } from "../business/user/UserRepository";
 import { CustomError } from "../error/CustomError";
 import { user } from "../model/user";
 import { BaseDatabase } from "./BaseDatabase";
