@@ -30,3 +30,13 @@ GET http://localhost:3003/post/get/4be3cbe4-571b-449d-9140-7b6f799ff7fb
 ###
 
 GET http://localhost:3003/post/all
+
+###
+
+POST http://localhost:3003/friends/create 
+Content-Type: application/json
+
+{
+    "fkUser1":"2d1fb991-c0bf-4942-b033-50527a9d00ee",
+    "fkUser2":"a2c4afbb-70a3-453e-a813-1b8bdc1e1fc9"
+}
