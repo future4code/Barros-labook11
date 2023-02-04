@@ -72,4 +72,11 @@ export class PostBusiness {
             
         }
     }
+    getFeedPosts = async(id:string) => {
+        try {
+            
+        } catch (error) {
+            
+        }
+    }
 }

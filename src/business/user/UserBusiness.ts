@@ -41,4 +41,16 @@ export class UserBusiness {
             
         }
     }
+
+    getUserById = async(id:string):Promise<user> => {
+        try {
+            if (!id) {
+                throw new CustomError(400, "Id must be passed as params");  
+            }
+            return await this.userDatabase.getUserById(id)
+        } catch (error:any) {
+            throw new Error(error.Message || error.sqlMessage);
+            
+        }
+    }
 }
