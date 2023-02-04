@@ -4,6 +4,8 @@ import { PostRepository } from "./PostRepository";
 import { postType } from "../../model/post";
 import { v4 as generateId } from 'uuid'
 import { stringify } from "querystring";
+import { FriendshipDatabase } from "../../data/FriendshipDatabase";
+import { PostDatabase } from "../../data/PostDatabase";
 
 export class PostBusiness {
     constructor(private postDatabase:PostRepository){}
@@ -74,8 +76,19 @@ export class PostBusiness {
     }
     getFeedPosts = async(id:string) => {
         try {
-            
-        } catch (error) {
+            const friendship = new FriendshipDatabase()
+            let allFriends = await friendship.getById(id)
+            let idQueries:string[] = []
+            for (const friend of allFriends) {
+                if (friend.FK_user1 === id) {
+                    idQueries.push(friend.FK_user2)
+                } else {
+                    idQueries.push(friend.FK_user1)
+                }
+            }
+            return await this.postDatabase.getFeedPosts(idQueries)
+        } catch (error:any) {
+            throw new Error(error.message || error.sqlMessage);
             
         }
     }

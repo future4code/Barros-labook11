@@ -15,3 +15,5 @@ postRouter.post("/create", (req,res) => postController.insertPost(req, res))
 postRouter.get("/all", (req, res) => postController.getAll(req, res))
 
 postRouter.get("/get/:id", (req, res) => postController.getById(req, res))
+
+postRouter.get("/feed/:id", (req, res) => postController.getFeedPosts(req, res))
