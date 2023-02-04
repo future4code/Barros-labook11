@@ -29,4 +29,15 @@ export class UserController {
             throw new Error(error.message||error.sqlMessage);   
         }
     }
+
+    getUserById = async(req:Request, res:Response) => {
+        try {
+            const id = req.params.id
+            let result = await this.userBusiness.getUserById(id)
+            res.status(200).send(result)
+            
+        } catch (error) {
+            
+        }
+    }
 }

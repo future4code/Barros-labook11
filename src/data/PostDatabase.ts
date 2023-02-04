@@ -24,4 +24,11 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
         .from(PostDatabase.TABLE_NAME)
         return result
     }
+    getFeedPosts = async(id: string[]): Promise<post[]> => {
+        let result:post[] = await BaseDatabase.connection
+        .select()
+        .whereIn('author_id', id)
+        .from(PostDatabase.TABLE_NAME)
+    return result
+    }
 }

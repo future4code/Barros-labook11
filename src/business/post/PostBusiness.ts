@@ -66,13 +66,16 @@ export class PostBusiness {
             console.log(result);
             
             return result
-            
-            // if (result === undefined ||) {
-            //     throw new CustomError(404, "Post not found :/");
-                
-            // }
+        
         } catch (error:any) {
             throw new CustomError(404, error.message);
+            
+        }
+    }
+    getFeedPosts = async(id:string) => {
+        try {
+            
+        } catch (error) {
             
         }
     }

@@ -2,14 +2,19 @@ POST http://localhost:3003/user/create
 Content-Type: application/json
 
 {
-    "name":"Iza",
-    "email":"iza@gmail.com",
-    "password":"Iza2123"
+    "name":"Victoria",
+    "email":"vicksout@gmail.com",
+    "password":"vick1234"
 }
 
 ###
 
 GET http://localhost:3003/user/all
+
+
+###
+
+GET http://localhost:3003/user/get/2d1fb991-c0bf-4942-b033-50527a9d00ee
 
 ###
 
@@ -17,10 +22,10 @@ POST http://localhost:3003/post/create
 Content-Type: application/json
 
 {
-    "photo":"https://i0.wp.com/omeudiadia.com.br/wp-content/uploads/2022/04/gatinho-com-capuz-de-pandinha.jpg?resize=563%2C506&ssl=1",
-    "description":"Mais um gatinho fofo no seu feed",
+    "photo":"https://www.zooplus.pt/magazine/wp-content/uploads/2021/03/kitten-sitzt-boden-768x512-1.jpeg",
+    "description":"Teste gatinho fofo",
     "type":"normal",
-    "authorId":"a2c4afbb-70a3-453e-a813-1b8bdc1e1fc9"
+    "authorId":"2d1fb991-c0bf-4942-b033-50527a9d00ee"
 }
 
 ###
@@ -33,6 +38,11 @@ GET http://localhost:3003/post/all
 
 ###
 
+GET http://localhost:3003/friends/all
+
+###
+
+
 POST http://localhost:3003/friends/create 
 Content-Type: application/json
 
@@ -40,3 +50,11 @@ Content-Type: application/json
     "fkUser1":"2d1fb991-c0bf-4942-b033-50527a9d00ee",
     "fkUser2":"a2c4afbb-70a3-453e-a813-1b8bdc1e1fc9"
 }
+
+###
+
+GET http://localhost:3003/friends/ef5f5a71-52c1-4178-aae2-d2b996bc72be
+
+###
+
+DELETE http://localhost:3003/friends/399344cd-346a-440d-8b-82cc64404f34
