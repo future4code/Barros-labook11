@@ -1,5 +1,5 @@
 import express from "express"
-
+import { AddressInfo } from "net"
 import cors from 'cors'
 import { userRouter } from "./routes/userRouter"
 import { postRouter } from "./routes/postRouter"
@@ -11,8 +11,13 @@ app.use(express.json())
 
 app.use(cors())
 
-app.listen(3003, () => {
-    console.log("Server is running in http://localhost:3003");
+const server = app.listen(process.env.PORT || 3003, () => {
+    if (server) {
+        const address = server.address() as AddressInfo;
+        console.log(`Server is running at localhost:${address.port}`);
+    } else {
+        console.error(`Failure upon starting server.`);   
+    }
 });
 
 app.use('/user', userRouter)
