@@ -38,6 +38,10 @@ GET http://localhost:3003/post/all
 
 ###
 
+GET http://localhost:3003/post/feed/2d1fb991-c0bf-4942-b033-50527a9d00ee
+
+###
+
 GET http://localhost:3003/friends/all
 
 ###
@@ -48,7 +52,7 @@ Content-Type: application/json
 
 {
     "fkUser1":"2d1fb991-c0bf-4942-b033-50527a9d00ee",
-    "fkUser2":"a2c4afbb-70a3-453e-a813-1b8bdc1e1fc9"
+    "fkUser2":"ef5f5a71-52c1-4178-aae2-d2b996bc72be"
 }
 
 ###

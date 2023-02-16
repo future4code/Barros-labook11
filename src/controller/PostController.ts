@@ -36,4 +36,13 @@ export class PostController {
             res.status(error.statusCode||404).send(error.message)
         }
     }
+    getFeedPosts = async (req:Request, res:Response) => {
+        try {
+            const id = req.params.id
+            let result = await this.postBusiness.getFeedPosts(id)
+            res.send(result)
+        } catch (error:any) {
+            res.send(error.message)
+        }
+    }
 }

@@ -26,7 +26,8 @@ export class FriendshipDatabase extends BaseDatabase implements FriendshipReposi
     getById = async (id:string) :Promise<friendship[]> => {
         let result:friendship[] = await BaseDatabase.connection
         .select()
-        .where({FK_user1:id }||{FK_user2:id})
+        .where({FK_user1:id })
+        .orWhere({FK_user2:id})
         .from(FriendshipDatabase.TABLE_NAME)
         return result
     }

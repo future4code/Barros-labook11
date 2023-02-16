@@ -29,6 +29,7 @@ export class PostDatabase extends BaseDatabase implements PostRepository {
         .select()
         .whereIn('author_id', id)
         .from(PostDatabase.TABLE_NAME)
+        .orderBy('created_at', 'desc')
     return result
     }
 }
